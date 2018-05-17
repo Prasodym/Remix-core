@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="annotations-5.1" />
+  <library name="forge dev">
+    <archive path="C:/Users/Prasodym/Desktop/forge dev" />
+  </library>
+</eclipse-userlibraries>
+
