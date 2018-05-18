@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "AiA",
+    " d "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:feather"
+    },
+    "i": {
+      "item": "minecraft:nether_star"
+    },
+    "d": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "result": {
+    "item": "minecraft:elytra",
+    "count": 1,
+    "data": 0
+  }
+}

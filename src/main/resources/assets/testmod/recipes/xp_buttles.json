@@ -1,0 +1,17 @@
+{
+  "type":"minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle",
+      "data": 0
+    },
+    {
+      "item": "testmod:germanium_ingot",
+      "data": 0
+    }
+  ],
+  "result":{
+    "item": "minecraft:experience_bottle",
+    "count": 2
+  }
+}

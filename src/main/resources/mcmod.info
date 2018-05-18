@@ -1,0 +1,16 @@
+[
+{
+  "modid": "SpaceremicCore",
+  "name": "SpaceremixCore",
+  "description": "Hilft den Server Space Remix.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Prasodym"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
