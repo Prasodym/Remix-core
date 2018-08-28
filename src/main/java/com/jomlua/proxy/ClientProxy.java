@@ -16,5 +16,9 @@ public class ClientProxy extends ServerProxy {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(testmod.germanium_ore), 0, new ModelResourceLocation(new ResourceLocation("testmod:germanium_ore"), "inventory"));
         ModelLoader.setCustomModelResourceLocation(testmod.germanium_ingot, 0, new ModelResourceLocation(new ResourceLocation("testmod:germanium_ingot"),"inventory"));
         ModelLoader.setCustomModelResourceLocation(testmod.xpscherben, 0, new ModelResourceLocation(new ResourceLocation("testmod:xpscherben"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(testmod.xpflash, 0, new ModelResourceLocation(new ResourceLocation("testmod:xpflash"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(testmod.flycore_ore), 0, new ModelResourceLocation(new ResourceLocation("testmod:flycore_ore"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(testmod.remix_core, 0, new ModelResourceLocation(new ResourceLocation("testmod:remix_core"), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(testmod.steel_ingot, 0, new ModelResourceLocation(new ResourceLocation("testmod:steel_ingot"), "inventory"));
     }
 }

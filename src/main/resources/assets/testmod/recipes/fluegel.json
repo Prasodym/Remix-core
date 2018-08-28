@@ -13,7 +13,7 @@
       "item": "minecraft:nether_star"
     },
     "d": {
-      "item": "minecraft:ender_pearl"
+      "item": "testmod:remix_core"
     }
   },
   "result": {

@@ -1,10 +1,9 @@
 package com.jomlua;
 
+import com.jomlua.blocks.flycore_ore;
 import com.jomlua.blocks.germanium_ore;
 import com.jomlua.generation.BlockGeneration;
-import com.jomlua.items.fluegel;
-import com.jomlua.items.germanium_ingot;
-import com.jomlua.items.xpscherben;
+import com.jomlua.items.*;
 import com.jomlua.proxy.ServerProxy;
 import com.jomlua.util.CoreModTab;
 import net.minecraft.block.Block;
@@ -12,6 +11,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.ModMetadata;
@@ -29,12 +30,14 @@ import org.apache.logging.log4j.Logger;
 
 
 
-@Mod(modid = testmod.MOD_ID, version = testmod.VERSION)
+@Mod(modid = testmod.MOD_ID, version = testmod.VERSION, name = testmod.NAME)
 public class testmod {
 
     public static final String MOD_ID = "testmod", dependencies = "required-after:SpaceremixCore;";
-    public static final String VERSION = "1.0.1";
-
+    public static final String VERSION = "1.3.1";
+    public static final String NAME = "Remix Core";
+    private static final Logger SERVER = LogManager.getFormatterLogger( "Space Remix" );
+    private static final Logger CLIENT = LogManager.getFormatterLogger( "Space Remix" );
 
 
 
@@ -44,26 +47,35 @@ public class testmod {
 
     @SidedProxy(clientSide  = "com.jomlua.proxy.ClientProxy", serverSide = "com.jomlua.proxy.ServerProxy")
     public static ServerProxy p;
-    public static Logger logger = LogManager.getLogger("SpaceRemixCore");
+
 
     public static CreativeTabs Spaceremixcore = new CoreModTab();
 
     public static final Item fluegel = new fluegel( "fluegel");
     public static final Item germanium_ingot = new germanium_ingot("germanium_ingot");
+    public static final Item remix_core = new remix_core("remix_core");
     public static final Item xpscherben = new xpscherben("xpscherben");
     public static final Block germanium_ore = new germanium_ore(Material.IRON, "germanium_ore");
+    public static final Item xpflash = new xpflash("xpflash");
+    public static final Block flycore_ore = new flycore_ore(Material.IRON, "flycore_ore");
+    public static final Item steel_ingot = new steel_ingot("steel_ingot");
 
 
-
+    public ItemSmelt smelting;
 
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event){
+    public void preInit (FMLPreInitializationEvent event){
         event.getModLog();
         ForgeRegistries.ITEMS.register(fluegel);
         ForgeRegistries.ITEMS.register(germanium_ingot);
         ForgeRegistries.BLOCKS.register(germanium_ore);
+        ForgeRegistries.ITEMS.register(remix_core);
         ForgeRegistries.ITEMS.register(xpscherben);
+        ForgeRegistries.ITEMS.register(xpflash);
+        ForgeRegistries.ITEMS.register(steel_ingot);
         ForgeRegistries.ITEMS.register(new ItemBlock(germanium_ore).setRegistryName(Objects.requireNonNull(germanium_ore.getRegistryName())));
+        ForgeRegistries.BLOCKS.register(flycore_ore);
+        ForgeRegistries.ITEMS.register(new ItemBlock(flycore_ore).setRegistryName(Objects.requireNonNull(flycore_ore.getRegistryName())));
         p.registerRenderers();
 
         ModMetadata data = event.getModMetadata();
@@ -73,13 +85,18 @@ public class testmod {
         data.authorList.add("Prasodym");
         data.name = "Space_Remixcore";
         data.credits = "Diese Mod ist nur zur testzwecken zu verwenden ./ Für Fehler bin ich nur allein verantwortlich!";
-        System.out.println("############# Mod wurde inialisiert! #############");
+        System.out.println( "############# Mod wurde inialisiert! #############");
 
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event){
-        GameRegistry.registerWorldGenerator(new BlockGeneration(germanium_ore.getDefaultState(), 5, 7),5);
+        GameRegistry.registerWorldGenerator(new BlockGeneration(germanium_ore.getDefaultState(), 5, 7),1);
+        GameRegistry.registerWorldGenerator(new BlockGeneration(flycore_ore.getDefaultState(), 1,7),2);
+        MinecraftForge.addGrassSeed(new ItemStack(steel_ingot), 5);
+
+        smelting = new ItemSmelt();
+        smelting.register();
 
 
 

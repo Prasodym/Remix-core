@@ -11,7 +11,7 @@
     }
   ],
   "result":{
-    "item": "minecraft:experience_bottle",
+    "item": "testmod:xpflash",
     "count": 2
   }
 }

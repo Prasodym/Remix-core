@@ -1,7 +1,7 @@
 package com.jomlua.items;
 
 
-import net.minecraft.item.Item;
+
 
 public class germanium_ingot extends itemsBase {
 

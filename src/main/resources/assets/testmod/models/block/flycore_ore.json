@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "testmod:blocks/germanium_ore"
+    "all": "testmod:blocks/flycore_ore"
   }
 }

@@ -1,6 +1,11 @@
-item.fluegel.name=Wing
+item.fluegel.name=§3Wing
 itemGroup.SpaceRemixCore=Space Remix Core
 com.jomlua.testmod=Test
 tile.germanium_ore.name=Germanium Ore
 item.germanium_ingot.name= Germanium Ingot
 item.xpscherben.name=XP Shards
+item.xpflash.name=XP Buttle
+tile.flycore_ore.name=Remix Core Ore
+item.remix_core.name=Remix Core
+com.jomlua.testmod=Space Remix
+item.steel_ingot.name=Steel Ingot

@@ -17,6 +17,8 @@ public class BlockGeneration extends WorldGenMinable implements IWorldGenerator 
     public BlockGeneration(IBlockState state, int blockCount, int frequency) {
         super(state, blockCount);
         this.frequency = frequency;
+
+
     }
 
     @Override
@@ -26,7 +28,7 @@ public class BlockGeneration extends WorldGenMinable implements IWorldGenerator 
             int offsetZ = random.nextInt(19);
 
             int posX = chunkX * 16 + offsetX;
-            int posZ = chunkZ * 16 + offsetX;
+            int posZ = chunkZ * 16 + offsetZ;
             int posY = random.nextInt(30);
 
             generate(world, random, new BlockPos(posX, posY, posZ));
